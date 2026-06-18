@@ -47,7 +47,16 @@ h3 {
 
 .profile-entry {
     float: left;
-    width: calc(50% - 42px);
+    width: calc(50% - 40px);
+    background-color: hsl(220, 5%, 15%);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px
+}
+
+.profile-entry-wide {
+    float: left;
+    width: calc(100% - 40px);
     background-color: hsl(220, 5%, 15%);
     border-radius: 10px;
     padding: 10px;
@@ -56,7 +65,13 @@ h3 {
 
 .portrait {
     float: right;
-    width: 30%;
+    width: 35%;
+    border-radius: 10px;
+}
+
+.portrait-wide {
+    float: right;
+    width: 20%;
     border-radius: 10px;
 }
 
@@ -77,5 +92,15 @@ h3 {
 
     .profile-entry {
         background-color: hsl(200, 5%, 92%);
+    }
+}
+
+@media (max-width: 767px) {
+    .profile-entry {
+        width: calc(100% - 40px);
+    }
+
+    .portrait-wide {
+        width: 35%;
     }
 }
