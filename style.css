@@ -1,0 +1,81 @@
+body {
+    font-family: Noto Sans, Roboto, Arial, Helvetica;
+    background-color: hsl(220, 5%, 10%);
+    color: hsl(220, 10%, 80%);
+    width: 95%;
+    max-width: 50em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    color: hsl(200, 90%, 50%);
+}
+
+a:link, a:visited {
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    text-decoration: underline;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+    color: hsl(220, 10%, 90%);
+}
+
+p {
+    font-size: 1em;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+.profile-row {
+    clear: both;
+}
+
+.profile-entry {
+    float: left;
+    width: calc(50% - 42px);
+    background-color: hsl(220, 5%, 15%);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px
+}
+
+.portrait {
+    float: right;
+    width: 30%;
+    border-radius: 10px;
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: hsl(200, 5%, 98%);
+        color: hsl(200, 10%, 10%);
+    }
+
+    a {
+        color: hsl(220, 90%, 50%);
+    }
+
+    h1, h2, h3 {
+        font-weight: bold;
+        color: hsl(200, 10%, 5%);
+    }
+
+    .profile-entry {
+        background-color: hsl(200, 5%, 92%);
+    }
+}
