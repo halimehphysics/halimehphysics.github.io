@@ -76,13 +76,67 @@ h3 {
 }
 
 .image {
-    width: 60%;
+    max-width: 80%;
     border-radius: 10px;
+}
+
+ul {
+    text-align: center;
+    display: flex;
+    gap: 2em;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    anchor-name: --carousel;
+}
+
+li {
+    list-style-type: none;
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+ul::scroll-button(*) {
+    border: 0;
+    font-size: 2em;
+    background: none;
+    color: hsl(220, 10%, 80%);
+    opacity: 0.7;
+    cursor: pointer;
+    position: absolute;
+    position-anchor: --carousel;
+}
+
+ul::scroll-button(*):hover,
+ul::scroll-button(*):focus {
+    opacity: 1;
+}
+
+ul::scroll-button(*):active {
+    translate: 1px 1px;
+}
+
+ul::scroll-button(*):disabled {
+    opacity: 0.2;
+    cursor: unset;
+}
+
+ul::scroll-button(left) {
+    content: "◄" / "Previous";
+    right: calc(anchor(left) - 0.8em);
+    bottom: calc(anchor(top) - anchor-size(height)/2);
+}
+
+ul::scroll-button(right) {
+    content: "►" / "Next";
+    left: calc(anchor(right) - 0.8em);
+    bottom: calc(anchor(top) - anchor-size(height)/2);
 }
 
 @media (prefers-color-scheme: light) {
     body {
-        background-color: hsl(200, 5%, 98%);
+        background-color: white;
         color: hsl(200, 10%, 10%);
     }
 
@@ -95,8 +149,12 @@ h3 {
         color: hsl(200, 10%, 5%);
     }
 
-    .profile-entry {
-        background-color: hsl(200, 5%, 92%);
+    .profile-entry, .profile-entry-wide {
+        background-color: hsl(200, 5%, 94%);
+    }
+
+    ul::scroll-button(*) {
+        color: hsl(200, 10%, 10%);
     }
 }
 
@@ -110,6 +168,6 @@ h3 {
     }
 
     .image {
-        width: 100%;
+        max-width: 100%;
     }
 }
