@@ -3,7 +3,7 @@ body {
     background-color: hsl(220, 5%, 10%);
     color: hsl(220, 10%, 80%);
     width: 95%;
-    max-width: 50em;
+    max-width: 55em;
     margin-left: auto;
     margin-right: auto;
 }
@@ -73,6 +73,15 @@ h3 {
     float: right;
     width: 20%;
     border-radius: 10px;
+}
+
+.news {
+    float: right;
+    width: calc(35% - 40px);
+    background-color: hsl(220, 5%, 15%);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px
 }
 
 .image {
@@ -149,7 +158,7 @@ ul::scroll-button(right) {
         color: hsl(200, 10%, 5%);
     }
 
-    .profile-entry, .profile-entry-wide {
+    .profile-entry, .profile-entry-wide, .news {
         background-color: hsl(200, 5%, 94%);
     }
 
@@ -159,7 +168,7 @@ ul::scroll-button(right) {
 }
 
 @media (max-width: 767px) {
-    .profile-entry {
+    .profile-entry, .news {
         width: calc(100% - 40px);
     }
 
