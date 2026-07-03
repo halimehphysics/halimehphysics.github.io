@@ -81,7 +81,8 @@ h3 {
     background-color: hsl(220, 5%, 15%);
     border-radius: 10px;
     padding: 10px;
-    margin: 10px
+    margin: 10px;
+    font-size: 0.9em;
 }
 
 .image {
@@ -170,6 +171,10 @@ ul::scroll-button(right) {
 @media (max-width: 767px) {
     .profile-entry, .news {
         width: calc(100% - 40px);
+    }
+
+    .news {
+        font-size: 1em;
     }
 
     .portrait-wide {
