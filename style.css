@@ -82,6 +82,7 @@ h3 {
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
+    margin-left: 20px;
     margin-right: calc(max(360px - 40vw, 40px - 35%));
     font-size: 0.9em;
 }
@@ -95,58 +96,23 @@ h3 {
     height: 1.5em;
 }
 
-ul {
-    text-align: center;
-    display: flex;
-    gap: 2em;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    anchor-name: --carousel;
+.carousel {
+    display: flow-root;
+    margin: 1em 2em;
 }
 
-li {
-    list-style-type: none;
-    flex: 0 0 100%;
-    scroll-snap-align: center;
-    margin-left: 2em;
-    margin-right: 2em;
+.carousel-item .image {
+    display: block;
+    margin: auto;
 }
 
-ul::scroll-button(*) {
-    border: 0;
-    font-size: 2em;
-    background: none;
-    color: hsl(220, 10%, 80%);
-    opacity: 0.7;
-    cursor: pointer;
-    position: absolute;
-    position-anchor: --carousel;
+.carousel-indicators {
+    position: relative;
+    margin: 0.5em 15% 0;
 }
 
-ul::scroll-button(*):hover,
-ul::scroll-button(*):focus {
-    opacity: 1;
-}
-
-ul::scroll-button(*):active {
-    translate: 1px 1px;
-}
-
-ul::scroll-button(*):disabled {
-    opacity: 0.2;
-    cursor: unset;
-}
-
-ul::scroll-button(left) {
-    content: "◄" / "Previous";
-    right: calc(anchor(left) - 0.8em);
-    bottom: calc(anchor(top) - anchor-size(height)/2);
-}
-
-ul::scroll-button(right) {
-    content: "►" / "Next";
-    left: calc(anchor(right) - 0.8em);
-    bottom: calc(anchor(top) - anchor-size(height)/2);
+.carousel-indicators [data-bs-target] {
+    background-color: hsl(220, 10%, 80%);
 }
 
 @media (prefers-color-scheme: light) {
@@ -168,8 +134,12 @@ ul::scroll-button(right) {
         background-color: hsl(200, 5%, 94%);
     }
 
-    ul::scroll-button(*) {
-        color: hsl(200, 10%, 10%);
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+        filter: invert(1);
+    }
+
+    .carousel-indicators [data-bs-target] {
+        background-color: hsl(200, 10%, 10%);
     }
 }
 
@@ -180,6 +150,7 @@ ul::scroll-button(right) {
 
     .news {
         font-size: 1em;
+        margin-left: 10px;
         margin-right: 10px;
     }
 
