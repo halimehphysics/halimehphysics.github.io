@@ -101,9 +101,20 @@ h3 {
     margin: 1em 2em;
 }
 
+.carousel-inner {
+    height: min(400px, 65vw);
+}
+
+.carousel-item {
+    height: 100%;
+}
+
 .carousel-item .image {
     display: block;
+    height: 100%;
+    width: auto;
     margin: auto;
+    object-fit: contain;
 }
 
 .carousel-indicators {
